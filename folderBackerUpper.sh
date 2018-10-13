@@ -43,6 +43,6 @@ rm $LATEST_DIR/${HOSTNAME}*
 zip -r $BACKUP_DIR/${HOSTNAME}_${TIMESTAMP}.zip $SOURCE_FOLDER
 cp $BACKUP_DIR/${HOSTNAME}_${TIMESTAMP}.zip $LATEST_DIR
 
-find $BACKUP_DIR -ctime $REMOVE_TIMESPAN_DAYS -exec rm {} + >/dev/null 2>&1
+find $BACKUP_DIR -ctime $REMOVE_TIMESPAN_DAYS -name ${HOSTNAME}* -exec rm {} + >/dev/null 2>&1
 
 
